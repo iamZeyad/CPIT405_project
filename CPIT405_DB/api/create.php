@@ -47,8 +47,6 @@ if(!$data) {
 $script->setScript($data['script']);
 $script->setDescribtion($data['describtion']);
 
-
-
 if($script->create()) {
     echo json_encode(
         array('message'=>'A script item was created',

@@ -1,4 +1,5 @@
 import './Form.css';
+import Result from './Result';
 import { useState, useEffect } from 'react';
 const Form = () => {
     const [describtion, setDescribtion] = useState(null);
@@ -10,6 +11,9 @@ const Form = () => {
             fetchF();
         }
     }, [script]);
+    useEffect(() => {
+        setScript(null)
+    },[describtion]);
 
 
     async function fetchF() {
@@ -32,7 +36,8 @@ const Form = () => {
         const data = await response.json();
         console.log(data);
     }
-    async function handleSubmit() {
+    async function handleSubmit(e) {
+        e.preventDefault();
         if (!file) {
             alert('Please select a file.');
             return;
@@ -67,8 +72,12 @@ const Form = () => {
                         onChange={(e) => { setFile(e.target.files[0]) }} />
                 </div>
 
-                <button onClick={handleSubmit}>submit</button>
+                <button>submit</button>
             </form>
+            {script &&
+                <div>
+                    <Result script={script} describtion={describtion} />
+                </div>}
         </>
 
     )

@@ -67,9 +67,8 @@ public function readOne(){
     return false;
 }
 public function readAll(){
-    $query = "SELECT id, describtion, script, date_added FROM ". $this->dbTable." WHERE id=:id";
+    $query = "SELECT id, describtion, script, date_added FROM ". $this->dbTable;
     $stmt = $this->dbConnection->prepare($query);
-    $stmt->bindParam(":id", $this->id);
     if($stmt->execute() && $stmt->rowCount() > 0) {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
