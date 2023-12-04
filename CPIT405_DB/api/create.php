@@ -1,16 +1,11 @@
 <?php
 
 // Set common HTTP response headers
-// header("Access-Control-Allow-Origin: http://localhost:3001");
-// header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-// header("Access-Control-Allow-Headers: Content-Type");
-// header("Content-Type: application/json"); //NEED TO CHANGE
+header("Access-Control-Allow-Origin: http://localhost:3001");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Content-Type: application/json"); 
 // Allow only requests from specific origins
 header('Access-Control-Allow-Origin: http://localhost:3001');
-
-// Allow certain methods if needed (e.g., GET, POST)
-header('Access-Control-Allow-Methods: GET, POST');
-
 // Allow certain headers if needed
 header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
 
@@ -57,7 +52,6 @@ $script->setDescribtion($data['describtion']);
 if($script->create()) {
     echo json_encode(
         array('message'=>'A script item was created',
-            'id' => $script->lasId()
         )
     );
 }

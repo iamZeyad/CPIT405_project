@@ -37,18 +37,6 @@ public function setDateAdded($dateAdded) {
     $this->dateAdded = $dateAdded;
 }
 
-public function lasId() {
-    $query = "SELECT LAST_INSERT_ID();";
-    $stmt = $this->dbConnection->prepare($query);
-
-if($stmt->execute()){
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
-}
-printf("Error: s%", $stmt->error);
-return 'some error in create()';
-}
-
 public function create(){
     $query = "INSERT INTO ". $this->dbTable. "(describtion, script, date_added) VALUES(:describtion,:script, now());";
     
