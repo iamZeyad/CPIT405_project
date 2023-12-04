@@ -1,4 +1,5 @@
 import './Form.css';
+import { useState, useEffect } from 'react';
 const Form = () => {
     const [describtion, setDescribtion] = useState(null);
     const [script, setScript] = useState(null);
@@ -72,4 +73,4 @@ const Form = () => {
 
     )
 }
-export default Input;
+export default Form;

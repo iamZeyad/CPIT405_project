@@ -26,7 +26,7 @@ export default function App() {
           </Routes>
         </main>
         <footer>
-          <p></p>
+          <p>Some footer</p>
         </footer>
       </div>
     </BrowserRouter>
