@@ -1,10 +1,18 @@
 <?php
 
 // Set common HTTP response headers
-header("Access-Control-Allow-Origin: http://localhost:3001");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json"); //NEED TO CHANGE
+// header("Access-Control-Allow-Origin: http://localhost:3001");
+// header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+// header("Access-Control-Allow-Headers: Content-Type");
+// header("Content-Type: application/json"); //NEED TO CHANGE
+// Allow only requests from specific origins
+header('Access-Control-Allow-Origin: http://localhost:3001');
+
+// Allow certain methods if needed (e.g., GET, POST)
+header('Access-Control-Allow-Methods: GET, POST');
+
+// Allow certain headers if needed
+header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
 
 // Handle OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -32,7 +40,7 @@ $script = new Script($dbConnection);
 //get the http post request JSON body
 $data = json_decode(file_get_contents('php://input'), true);
 //if no script is included in the json body, return an error
-if(!$data || !isset($data['script'])) {
+if(!$data) {
     http_response_code(422);
     echo json_encode(
         array('message'=> 'Error missing required parameter script in the JSON body')
