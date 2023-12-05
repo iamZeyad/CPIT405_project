@@ -31,7 +31,9 @@ export default function App() {
           </Routes>
         </main>
         <footer>
-          <p>Some footer</p>
+          <div class="copyright">
+            <p>&copy; 2023 COL@. All rights reserved.</p>
+          </div>
         </footer>
       </div>
     </BrowserRouter>

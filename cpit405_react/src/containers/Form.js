@@ -37,7 +37,7 @@ const Form = () => {
     }
     async function handleSubmit(e) {
         e.preventDefault();
-        if (!file) {
+        if (!file ) {
             alert('Please select a file.');
             return;
         }
@@ -65,7 +65,7 @@ const Form = () => {
                         onChange={(e) => { setDescribtion(e.target.value) }} />
                 </div>
                 <div>
-                    <label>MP3 file:</label>
+                    <label>Audio file:</label>
                     <input type="file"
                         placeholder="enter the audio file"
                         onChange={(e) => { setFile(e.target.files[0]) }} />

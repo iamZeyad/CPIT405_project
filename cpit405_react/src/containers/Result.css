@@ -19,7 +19,12 @@
     color: #555;
 }
 
-.result-script {
+.result {
     color: #007bff;
+    font-weight: bold;
+}
+.result-script {
+    display: block;
+    color: #555;
     font-weight: bold;
 }
