@@ -34,6 +34,10 @@ input[type="text"]:focus, input[type="file"]:focus {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
+.file-error{
+    color: red;
+}
+
 /* Button Styles */
 button {
     background-color: #007bff;

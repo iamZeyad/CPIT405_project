@@ -1,5 +1,4 @@
 <?php
-
 // Set common HTTP response headers
 header("Access-Control-Allow-Origin: http://localhost:3001");
 header("Access-Control-Allow-Methods: POST, OPTIONS, GET, PUT");

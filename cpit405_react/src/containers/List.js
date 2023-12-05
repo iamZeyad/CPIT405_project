@@ -21,14 +21,14 @@ const ScriptList = () => {
     };
     
 
-    const handleDelete = (scriptId) => {
+    const handleDelete = async (scriptId) => {
         const requestOptions = {
             method: 'DELETE', // or 'DELETE', if your server supports DELETE with body
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: scriptId }),
         };
         // Call Delete API
-        fetch(`http://localhost:3000/CPIT405_DB/api/delete.php`, requestOptions);
+        await fetch(`http://localhost:3000/CPIT405_DB/api/delete.php`, requestOptions);
         // After deletion, fetch the updated list of scripts
         fetchScripts();
     };
