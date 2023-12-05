@@ -8,15 +8,16 @@ const Form = () => {
 
     useEffect(() => {
         if (script != null) {
-            fetchF();
+            storeScript();
         }
     }, [script]);
+
     useEffect(() => {
         setScript(null)
     },[describtion]);
 
 
-    async function fetchF() {
+    function storeScript() {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -32,9 +33,7 @@ const Form = () => {
             redirect: "follow",
         };
 
-        const response = await fetch("http://localhost:3000/CPIT405_DB/api/create.php", requestOptions);
-        const data = await response.json();
-        console.log(data);
+        fetch("http://localhost:3000/CPIT405_DB/api/create.php", requestOptions);
     }
     async function handleSubmit(e) {
         e.preventDefault();
@@ -46,12 +45,12 @@ const Form = () => {
         const formData = new FormData();
         formData.append('file', file);
 
+        //return a script
         const response = await fetch('http://localhost:3000/CPIT405_DB/api/upload.php', {
             method: 'POST',
             body: formData,
         })
         const data = await response.json();
-        console.log(data)
         setScript(data.text);
     }
 
