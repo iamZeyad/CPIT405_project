@@ -42,7 +42,7 @@ const Form = () => {
         const selectedFile = e.target.files[0];
 
         // Check if the file size is greater than 8MB
-        if (selectedFile && selectedFile.size > 8 * 1024 * 1024) {
+        if (selectedFile && selectedFile.size > 24 * 1024 * 1024) {
             setFileSizeError(true);
             e.target.value = null; // Clear the selected file
             return;
@@ -103,7 +103,7 @@ const Form = () => {
                         onChange={handleFileChange}
                     />
                     {fileSizeError && (
-                        <p className='file-error'>File size exceeds 8MB. Please choose a smaller file.</p>
+                        <p className='file-error'>File size exceeds 25MB. Please choose a smaller file.</p>
                     )}
                     {fileTypeError && (
                         <p className='file-error'>Please select a valid audio file.</p>

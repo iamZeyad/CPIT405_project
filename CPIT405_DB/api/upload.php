@@ -36,16 +36,6 @@ $postData = array('file' => $cfile, 'model' => 'whisper-1');
 
 $curl = curl_init();
 
-curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://api.openai.com/v1/audio/transcriptions',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $postData,
-    CURLOPT_HTTPHEADER => array(
-        'Authorization: Bearer ' . getenv('KEY'),
-    ),
-));
-
 $response = curl_exec($curl);
 
 echo $response;

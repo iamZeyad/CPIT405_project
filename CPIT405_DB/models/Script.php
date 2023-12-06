@@ -51,21 +51,6 @@ public function create(){
     return false;
 }
 
-
-//CHANGE!!!!!
-public function readOne(){
-    $query = "SELECT * FROM ".$this->dbTable." WHERE id=:id";
-    $stmt = $this->dbConnection->prepare($query);
-    $stmt->bindParam(":id", $this->id);
-    if($stmt->execute() && $stmt->rowCount()==1) {
-        $result = $stmt->fetch(PDO::FETCH_OBJ);
-        $this->id = $result->id;
-        $this->script = $result->scrip;
-        $this->dateAdded = $result->date_added;
-        return true;
-    }
-    return false;
-}
 public function readAll(){
     $query = "SELECT id, describtion, script, date_added FROM ". $this->dbTable;
     $stmt = $this->dbConnection->prepare($query);
@@ -74,16 +59,7 @@ public function readAll(){
     }
     return [];
 }
-// public function update() {
-//     $query = "UPDATE ". $this->dbTable." SET done=:done WHERE id=:id";
-//     $stmt = $this->dbConnection->prepare($query);
-//     $stmt->bindParam(":done", $this->done);
-//     $stmt->bindParam("id", $this->id);
-//     if($stmt->execute() && $stmt->rowCount() == 1){
-//         return true;
-//     }
-//     return false;
-// }
+
 public function delete() {
     $query = "DELETE FROM ". $this->dbTable ." WHERE id=:id";
     $stmt = $this->dbConnection->prepare($query);
