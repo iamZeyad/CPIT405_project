@@ -5,7 +5,6 @@ header("Access-Control-Allow-Origin: http://localhost:3001");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Content-Type: application/json"); 
 // Allow only requests from specific origins
-header('Access-Control-Allow-Origin: http://localhost:3001');
 // Allow certain headers if needed
 header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
 
