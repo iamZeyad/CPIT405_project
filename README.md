@@ -17,4 +17,4 @@
 <img width="1440" alt="Screenshot 2023-12-07 at 5 37 03 PM" src="https://github.com/iamZeyad/CPIT405_project/assets/76458361/8f4b3980-4238-411b-b027-e40039d19b62">
 <br/>
 <h1>Web App demo</h1>
-<a target='_blank' href='https://www.youtube.com/watch?v=3tGy07hWcZ4' ><img src='./Transcripter_CPIT405.png'></a>
+<a href='https://www.youtube.com/watch?v=3tGy07hWcZ4' target="_blank" ><img src='./Transcripter_CPIT405.png'></a>
