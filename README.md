@@ -29,9 +29,9 @@
 
 ## Components
 
-### Show List Component
+### List Component
 ![Show List Component](https://github.com/iamZeyad/CPIT405_project/assets/76458361/462b028a-3ab1-4f3f-872f-078d2af1b515)
 
-### Show About Component
+### About Component
 ![Show About Component](https://github.com/iamZeyad/CPIT405_project/assets/76458361/8f4b3980-4238-411b-b027-e40039d19b62)
 
